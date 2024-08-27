@@ -5,12 +5,10 @@ const { Pool } = require('pg');
 const cors = require('cors');
 const fs = require('fs');
 
-// Configuración de Express
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Cargar variables de entorno
 require('dotenv').config();
 
 // Configuración de CORS
@@ -104,7 +102,8 @@ app.get('/photos', async (req, res) => {
     res.status(500).send('Error al obtener las fotos');
   }
 });
-// Iniciar el servidor
+
+
 app.listen(3000, () => {
   console.log('Servidor en marcha en el puerto 3000');
 });
